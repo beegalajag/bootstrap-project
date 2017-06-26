@@ -1,36 +1,51 @@
-<html>
+<!DOCTYPE html>
 <head>
 	<title>Add Staff Details</title>
+	  <meta charset="utf-8">
+ 	  <link rel="stylesheet" type="text/css" href="addRating.css">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <script src="addStaff.js"> </script>
 </head>
 
 <body>
-	<a href="index.php">Home</a>
-	<br/><br/>
+	<nav class="navbar navbar-default">
+ 	<div class="navbar-header">
+      <a class="btn btn-info " href="index.php"> <span class="glyphicon glyphicon-home"></span> Home</a>
+    </div>
 
-	<form action="addStaff.php" method="post" name="form1">
-		<table width="25%" border="0">
-			<tr> 
-				<td>Name</td>
-				<td><input type="text" name="name"></td>
-			</tr>
-			<tr> 
-				<td>Gender</td>
-				<td><input type="text" name="gender"></td>
-			</tr>
-			<tr> 
-				<td>Role</td>
-				<td><input type="text" name="email"></td>
-			</tr>
-			<tr> 
-				<td>Description</td>
-				<td><textarea name="description"></textarea>
-			</tr>
-			<tr> 
-				<td></td>
-				<td><input type="submit" name="Submit" value="Add"></td>
-			</tr>
-		</table>
+    </nav>
+	<br/><br/>
+	<div class="container">
+
+	<form action="addStaff.php" method="post">
+  
+	<div class="container-fluid">
+		<div class="form-group">
+      		<label for="name">Name:</label>
+      		<input type="text" class="form-control" name="name"  placeholder="Enter Name" required>
+    	</div>
+    	<div class="form-group">
+      		<label for="gender">Gender:</label>
+      		<input type="text" class="form-control" name="gender"  placeholder="Enter Gender" required>
+    	</div>
+    	<div class="form-group">
+      		<label for="email">Role:</label>
+      		<input type="text" class="form-control" name="role"  placeholder="Enter Role" required="true">
+    	</div>
+    	<div class="form-group">
+      		<label for="description">Description:</label>
+      		<input type="text" class="form-control" name="description"  placeholder="Enter Description" >
+    	</div>
+    	<div class="form-group">
+    	 <button type="submit"  class="btn btn-success" onclick="submitForm(this.form);">Submit</button> <!--onclick="addStaff()"  -->
+    	 <a href="staffView.php" id="cancel" name="cancel" class="btn btn-default">Cancel</a>
+    	</div>
+
+	  </div>
 	</form>
+	</div>
 </body>
 </html>
-

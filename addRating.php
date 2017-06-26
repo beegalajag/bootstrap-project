@@ -8,13 +8,13 @@
 //including the database connection file
 include_once("config.php");
 
-if(isset($_POST['Submit'])) {	
+if($_SERVER["REQUEST_METHOD"] == 'POST') {	
 	
 	$ratingType = mysqli_real_escape_string($mysqli, $_POST['ratingType']);
 	$scale = mysqli_real_escape_string($mysqli, $_POST['scale']);
 	
 	// checking empty fields
-	if(empty($ratingType) || empty($scale) {
+	if(empty($ratingType) || empty($scale)) {
 				
 		if(empty($ratingType)) {
 			echo "<font color='red'>Rating field is empty.</font><br/>";

@@ -1,14 +1,68 @@
+
 <html>
 <head>
 	<title>Add Rating</title>
+	<meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="addRating.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 </head>
 
-<body>
-	<a href="index.php">Home</a>
-	<br/><br/>
-
+<body><nav class="navbar navbar-default">
+        <a href="index.php" class="btn btn-info " >
+          <span class="glyphicon glyphicon-home"></span> Home
+        </a>
+ <!-- <div class="navbar-header">
+      <a class="navbar-brand" href="index.php">Home</a>
+    </div> -->
+ 
+      </nav>
+<div class="container" >
+<div class="container-fluid" >
 	<form action="addRating.php" method="post" name="form1">
-		<table width="25%" border="0">
+   <div class="form-group" >
+          <label for="ratingType">Rating</label>
+          <input type="text" class="form-control" name="ratingType" placeholder="Enter Rating" required="required" >
+    </div>
+     <div class="form-group" >
+          <label for="scale">Scale</label>
+          <input type="text" class="form-control" name="scale"  placeholder="Enter Scale" required="required">
+    </div>
+     <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+</div>
+</div>
+  <!--  <div class="form-group">
+      <label for="ratingType">Rating Type</label>
+      <input type="text" class="form-control" name="ratingType" style="width:25%;" >
+    </div>
+    <div class="form-group">
+      <label for="scale">Scale</label>
+      <input type="text" class="form-control" name="scale" style="width:25%;">
+    </div>
+ -->
+<!-- <div class="" style="margin-left:  10em;">
+	<form action="addRating.php" method="post" name="form1">
+
+	<div class="form-group">
+    <label for="addRating" > Rating Type:</label>
+       <input type="text" class="form-control" id="ratingType" style="width: 25%;">
+   
+  </div>
+	 <div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label">Rating Type</label>
+  <div class="col-10">
+    <input class="form-control" type="text" value="" id="example-text-input">
+  </div>
+
+<div class="form-group">
+    <label for="exampleSelect1"> Scale</label>
+            <input type="text" class="form-control" id="scale" style="width: 25%;">
+</div>  -->
+  
+ 		<!-- <table width="25%" border="0">
 			<tr> 
 				<td>Rating Type</td>
 				<td><input type="text" name="ratingType"></td>
@@ -22,8 +76,8 @@
 				<td></td>
 				<td><input type="submit" name="Submit" value="Add"></td>
 			</tr>
-		</table>
-	</form>
+		</table> -->
+
 </body>
 </html>
 

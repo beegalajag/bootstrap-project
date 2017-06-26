@@ -23,7 +23,7 @@ if(isset($_POST['update']))
 		
 	} else {	
 		//updating the table
-		$result = mysqli_query($mysqli, "UPDATE rating SET rating_type='$ratingType',scale='$scale' 
+		$result = mysqli_query($mysqli, "UPDATE ratings SET rating_type='$ratingType',scale='$scale' 
 			WHERE id=$id");
 		
 		//redirectig to the display page. In our case, it is index.php
@@ -47,14 +47,41 @@ while($res = mysqli_fetch_array($result))
 <html>
 <head>	
 	<title>Edit Rating</title>
+	 <meta charset="utf-8">
+	 <link rel="stylesheet" type="text/css" href="addRating.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 </head>
 
 <body>
-	<a href="ratingView.php">Home</a>
+	<nav class="navbar navbar-default">
+ <div class="navbar-header">
+      <a class="btn btn-info " href="ratingView.php"> <span class="glyphicon glyphicon-home"></span> Home</a>
+    </div>
+ 
+</nav>
 	<br/><br/>
 	
+	<div class="container" >
+	<div class="container-fluid">
 	<form name="form1" method="post" action="editRating.php">
-		<table border="0">
+
+       <div class="form-group" >
+       		<label for="ratingType">Rating</label>
+			<input type="text" class="form-control" name="ratingType" value="<?php echo $ratingType;?>">
+		</div>
+		 <div class="form-group" >
+       		<label for="scale">Scale</label>
+			<input type="text" class="form-control" name="scale" value="<?php echo $scale;?>">
+		</div>
+		<div class="form-group">
+			<input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
+			<input type="submit" class="btn btn-primary active" role="button" aria-pressed="true" name="update" value="Update">
+			<a href="ratingView.php" id="cancel" name="cancel" class="btn btn-default">Cancel</a>
+		</div>
+		<!-- <table border="0">
 			<tr> 
 				<td>Rating</td>
 				<td><input type="text" name="ratingType" value="<?php echo $ratingType;?>"></td>
@@ -68,7 +95,9 @@ while($res = mysqli_fetch_array($result))
 				<td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
 				<td><input type="submit" name="update" value="Update"></td>
 			</tr>
-		</table>
+		</table> -->
 	</form>
+	</div>
+	</div>
 </body>
 </html>
